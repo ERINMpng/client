@@ -15,6 +15,7 @@ const NavBar = () => {
     const [isNavBarVisible, setIsNavBarVisible] = useState(true); 
     const location = useLocation();
     const { store } = useContext(Context);
+    const [email, setEmail] = useState('');
     
     useEffect(() => { 
         const scroll = () =>{ 
@@ -46,12 +47,17 @@ const NavBar = () => {
         }
     }, [window.location.hash])
 
+    useEffect(() => { 
+        setEmail(store.user.email) 
+    }, [store])
+
+
     return (
         <Flex
         align={'center'}
         justify={'space-between'}
         width={'100%'}
-        padding={'10px 50px'}
+        padding={'20px 50px'}
         backgroundColor='#040404'
         position={'fixed'}
         zIndex={'999'}
@@ -73,24 +79,29 @@ const NavBar = () => {
             <Heading color='white'>Potashop</Heading></Link>
             <Flex
                 justify={'space-between'}
-                width={'90px'}
+                width={'100px'}
+                justify-content= 'center'
+                margin-left= 'auto'
             >
                 {store.isAuth ? (<div>
-                    <Flex gap={3}>
-                        <div>Admin</div>
-                        <button onClick={() => store.logout}>Exit</button>
-                    </Flex>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+                    <Flex gap={3} justify={'space-between'}>
+                    <Box width={'200px'}>
+                        <Flex>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
                         <path fill="white" d="M18 2h-6v2h-2v6h2V4h6V2zm0 8h-6v2h6v-2zm0-6h2v6h-2V4zM7 16h2v-2h12v2H9v4h12v-4h2v6H7v-6zM3 8h2v2h2v2H5v2H3v-2H1v-2h2V8z"/>
-                    </svg></div>) : (
+                    </svg>
+                    <button onClick={() => store.logout}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+                                <path fill="white" d="M18 4v16h2V4h-2zM4 11v2h8v2h-2v2h2v-2h2v-2h2v-2h-2V9h-2V7h-2v2h2v2H4z"/>
+                    </svg></button>
+                    </Flex>
+                    <Text color='white'>Hi, {email}</Text></Box>
+                    </Flex></div>) : (
                 <Link to={AuthRouter} >
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
                         <path fill="white" d="M15 2H9v2H7v6h2V4h6V2zm0 8H9v2h6v-2zm0-6h2v6h-2V4zM4 16h2v-2h12v2H6v4h12v-4h2v6H4v-6z"/>
                     </svg>
                 </Link>)}
-                <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="white" d="M22 4H2v6h2v10h16V10h2zM6 10h12v8H6zm14-4v2H4V6zm-5 6H9v2h6z"/>
-                </svg>
             </Flex>
         </Flex>
     );
