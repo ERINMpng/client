@@ -7,6 +7,8 @@ import potato from '../img/potatomain.PNG'
 import batat from '../img/batat.jpg'
 import pole from '../img/pole.jpg'
 import CartItem from '../cartall/CartItem';
+import CartItem3 from '../cartall/Cart3';   
+import CartItem4 from '../cartall/Cart4';
 import News from './News';
 
 
@@ -45,9 +47,8 @@ const Main = () => {
                     margin={'0px 0px 50px 0px'}
                 >
                    <Link to={ShopRouter}> <CartItem /></Link>
-                    <Link to={ShopRouter}><CartItem /></Link>
-                    <Link to={ShopRouter}><CartItem /></Link>
-                    <Link to={ShopRouter}><CartItem /></Link>
+                    <Link to={ShopRouter}><CartItem3 /></Link>
+                    <Link to={ShopRouter}><CartItem4 /></Link>
                     </Flex>
                     <Flex padding={'10px 50px'} flexDirection={'column'} justifyContent={'center'} margin={'30px 0px 20px 0px'}>
                         <Text fontSize={'40px'} color={'#332821'}>Where are your potatoes?</Text>

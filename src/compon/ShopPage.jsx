@@ -4,7 +4,9 @@ import { Flex, Box } from '@chakra-ui/react';
 import NavBar from './NavBar';
 import FooterPage from './foter';
 import TopButton from './TopButton';
-import CartItem2 from '../cartall/Cart2';    
+import CartItem2 from '../cartall/Cart2'; 
+import CartItem3 from '../cartall/Cart3';   
+import CartItem4 from '../cartall/Cart4';
 import { useEffect, useState } from 'react';
 import Loader from './Loader';
 
@@ -37,16 +39,16 @@ const ShopPage = () =>{
         mt={'50px'}
     >
         <CartItem />
+        <CartItem3 />
+        <CartItem4 />
         <CartItem />
+        <CartItem3 />
+        <CartItem4 />
         <CartItem />
+        <CartItem3 />
+        <CartItem4 />
         <CartItem />
-        <CartItem />
-        <CartItem />
-        <CartItem />
-        <CartItem />
-        <CartItem />
-        <CartItem />
-        <CartItem />
+        <CartItem3 />
         <CartItem2 />
     </Flex>
     <TopButton />

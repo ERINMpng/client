@@ -1,8 +1,8 @@
 import '../App.css';
 import {Text, Box, Flex, Grid, Input, Heading, Center, Card, Image, Button} from '@chakra-ui/react';
-import batat from '../img/batat.jpg'
+import kartoshka from '../img/kartoshka.jpg'
 
-const CartItem = () =>{
+const CartItem4 = () =>{
     return(
         <Card
         width={'400px'}
@@ -11,16 +11,16 @@ const CartItem = () =>{
         >
             <Image width={'352px'} height={'236px'}
                 borderRadius={'5px'}
-                src={batat}
+                src={kartoshka}
             ></Image>
     <Box
         width={'100%'}
     >
-        <Heading fontSize={'30px'}>European sweet potato</Heading>
+        <Heading fontSize={'30px'}>Potatoes Queen Anne</Heading>
     </Box>
     <Box>
         <Text>
-        Potatoes - an annual plant of the family ...
+        Developed by German specialists from ...
         </Text>
     </Box>
     <Box display='flex'>
@@ -31,10 +31,10 @@ const CartItem = () =>{
                 Подробнее...
             </Button> */}
         <Box border='1px' borderColor='green' borderRadius='5px' height='40px' width='120px' margin='10px 50px 10px 10px' >
-            <Text color='green' textAlign='center' padding='8px'>Prise: 53$</Text>
+            <Text color='green' textAlign='center' padding='8px'>Prise: 83$</Text>
         </Box>
     </Box>
         </Card>
     )
 }
-export default CartItem;
+export default CartItem4;
